@@ -9,16 +9,16 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(process.env.API_ENDPOINT)
+    fetch('https://hero-back-1978.herokuapp.com/users')
       .then((res) => res.json())
       .then((parsedData) => { setData(parsedData); setLoading(false); });
   }, []);
 
-  if (loading) return <h1>process.env.API_ENDPOINT</h1>;
+  if (loading) return <h1>API_ENDPOINT</h1>;
 
   return (
     <>
-      <h1>process.env.API_ENDPOINT</h1>
+      <h1>API_ENDPOINT</h1>
       <table>
         <tr>
           {Object.keys(data[0]).map(
