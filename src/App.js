@@ -2,14 +2,14 @@ import './App.css';
 
 import React, { useEffect, useState } from 'react';
 
-// const API_ENDPOINT = 'http://localhost:3000/users';
+API_POINT = 'https://hero-back-1978.herokuapp.com/users';
 
 function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(process.env.API_ENDPOINT)
+    fetch(API_POINT)
       .then((res) => res.json())
       .then((parsedData) => { setData(parsedData); setLoading(false); });
   }, []);
